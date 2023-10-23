@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Chat with {{ user.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <input type="text" name="message" id="message" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    <hr>
+    <h2>Chat History</h2>
+    {% for message in messages %}
+        <div class="message">
+            <strong>{{ message.user.username }}</strong> {{ message.text }}
+        </div>
+    {% endfor %}
+{% endblock %}

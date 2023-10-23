@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'ignup' %}">Signup</a></li>
+            <li><a href="{% url 'essage_list' %}">Messages</a></li>
+        </ul>
+    </nav>
+    <h1>Chat</h1>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
